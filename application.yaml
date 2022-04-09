@@ -1,0 +1,5 @@
+couchbase:
+  connect: "couchbase://81.177.136.83"
+  auth:
+    username: "woop"
+    password: "gAu)j)Kf*6_2ce8`"
