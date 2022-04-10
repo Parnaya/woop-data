@@ -53,7 +53,7 @@ func couchbaseGet(cluster *gocb.Cluster) func(idArray *[]string) []model.Tag {
 
 func couchbaseCreate(collection *gocb.Collection) func(tag *model.Tag) {
 	return func(tag *model.Tag) {
-		if _, err := collection.Insert(tag.Id, tag, nil); err != nil {
+		if _, err := collection.Upsert(tag.Id, tag, nil); err != nil {
 			fmt.Errorf("[Couchbase] Ошибка во время вставки tag: %s", err)
 		}
 	}
